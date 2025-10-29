@@ -6,22 +6,126 @@
     <title>Cadastro de Voluntários</title>
     <link rel="stylesheet" href="style.css" />
     <style>
-      /* Estilo básico para a tabela de voluntários */
-      .voluntarios-lista table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 10px;
-      }
-      .voluntarios-lista th {
-        background: #f9a826;
-        color: #fff;
-      }
-      .voluntarios-lista td,
-      .voluntarios-lista th {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
-      }
+        /* ==============================
+           Tabela de Voluntários
+           ============================== */
+        .voluntarios-lista table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .voluntarios-lista th {
+            background: #FFB7C5; /* rosa pastel */
+            color: #fff;
+        }
+        .voluntarios-lista td,
+        .voluntarios-lista th {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .voluntarios-lista tr:nth-child(even) {
+            background-color: #FFF3B0; /* amarelo pastel */
+        }
+
+        /* ==============================
+           Feedback de Erro
+           ============================== */
+        input:invalid, select:invalid, textarea:invalid {
+            border-color: #FF6B6B;
+        }
+
+        input:valid, select:valid, textarea:valid {
+            border-color: #8AE1FC;
+        }
+
+        /* ==============================
+           Campos e Botões
+           ============================== */
+        fieldset {
+            border: 1px solid #FFC9A8;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #FFF8F0;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #FFB7C5;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        .btn-primary {
+            background: #A0D6FF;
+            color: white;
+            font-weight: bold;
+            border-radius: 50px;
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .success-message {
+            display: none;
+            color: #27ae60;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* Responsividade da tabela */
+        @media (max-width: 600px) {
+            .voluntarios-lista table, 
+            .voluntarios-lista th, 
+            .voluntarios-lista td {
+                display: block;
+                width: 100%;
+            }
+            .voluntarios-lista th {
+                text-align: right;
+                padding-right: 50%;
+                position: relative;
+            }
+            .voluntarios-lista td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .voluntarios-lista td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                font-weight: bold;
+                text-align: left;
+            }
+        }
     </style>
 </head>
 <body>
@@ -29,7 +133,6 @@
     <header>
         <nav>
            <div class="logo">&#128153; Voluntários</div>
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
             <ul id="navMenu">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="projeto.html">Projetos</a></li>
@@ -52,25 +155,24 @@
             <div class="success-message" id="successMessage">
                 ✅ Cadastro realizado com sucesso! Entraremos em contato em breve.
             </div>
-            <!-- Removido onsubmit="handleSubmit(event)" daqui -->
             <form id="volunteerForm">
                 <fieldset>
                     <legend>Dados Pessoais</legend>
                     <div class="form-group">
                         <label for="nome">Nome Completo *</label>
-                        <input type="text" id="nome" name="nome" required />
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required pattern="[A-Za-z\s]{3,50}" title="Somente letras e espaços, entre 3 e 50 caracteres"/>
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail *</label>
-                        <input type="email" id="email" name="email" required />
+                        <input type="email" id="email" name="email" placeholder="exemplo@email.com" required />
                     </div>
                     <div class="form-group">
                         <label for="telefone">Telefone *</label>
-                        <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required />
+                        <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required pattern="\(\d{2}\) \d{5}-\d{4}" title="Formato: (11) 99999-9999"/>
                     </div>
                     <div class="form-group">
                         <label for="idade">Idade *</label>
-                        <input type="number" id="idade" name="idade" min="16" max="100" required />
+                        <input type="number" id="idade" name="idade" min="16" max="100" placeholder="Digite sua idade" required />
                     </div>
                 </fieldset>
 
@@ -103,11 +205,11 @@
                     <legend>Informações Adicionais</legend>
                     <div class="form-group">
                         <label for="experiencia">Você já participou de ações voluntárias antes?</label>
-                        <textarea id="experiencia" name="experiencia" placeholder="Conte-nos sobre sua experiência..."></textarea>
+                        <textarea id="experiencia" name="experiencia" placeholder="Conte-nos sobre sua experiência..." rows="3"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="motivacao">Por que você quer ser voluntário?</label>
-                        <textarea id="motivacao" name="motivacao" placeholder="Compartilhe sua motivação..."></textarea>
+                        <textarea id="motivacao" name="motivacao" placeholder="Compartilhe sua motivação..." rows="3"></textarea>
                     </div>
                 </fieldset>
 
