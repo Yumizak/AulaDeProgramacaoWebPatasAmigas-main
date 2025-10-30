@@ -328,3 +328,26 @@ footer {
     transform: scale(1.05); /* leve zoom ao passar o mouse */
 }
 
+.cta {
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;      /* Centraliza verticalmente */
+    flex-direction: column;   /* Coloca os itens um abaixo do outro */
+    text-align: center;       /* Centraliza o texto */
+    min-height: 20vh;        /* Ocupa toda a altura da tela */
+    background: #FFF8F0;      /* Exemplo de cor de fundo */
+}
+
+.cta-content h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
