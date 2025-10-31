@@ -129,36 +129,35 @@ nav a.active {
     padding: 1rem 2.5rem;
     font-size: 1.2rem;
     font-weight: bold;
-    border-radius: 50px;
+    border-radius: 50px; /* todos arredondados */
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    position: relative;
-    overflow: hidden;
     text-align: center;
-}   
+    display: inline-block;
+}
 
-/* Botão Enviar Cadastro */
+/* Botão principal */
 .btn-primary {
-    background: #1E4EAA; /* azul escuro */
+    background: #1E4EAA;
     color: #fff;
 }
 
 .btn-primary:hover {
-    background: #163B80; /* hover mais escuro */
+    background: #163B80;
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* Botão Voltar ao Início */
+/* Botão secundário */
 .btn-secondary {
-    background: #C85A7A; /* rosa mais escuro */
+    background: #C85A7A;
     color: #fff;
 }
 
 .btn-secondary:hover {
-    background: #A03A5A; /* hover mais escuro */
+    background: #A03A5A;
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
@@ -211,6 +210,86 @@ form legend {
 }
 
 /* ==============================
+   CTA Section (CORRIGIDA)
+   ============================== */
+.cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #FFF8F0;
+    padding: 4rem 2rem;
+}
+
+.cta-content {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cta-content h2 {
+    font-size: 2em;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1.5rem; /* garante espaço entre texto e botão */
+}
+
+.cta-button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* ==============================
+   Galeria de Fotos
+   ============================== */
+.gallery-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #B8E4C9 0%, #FFB7C5 100%);
+    color: #333;
+}
+
+.gallery-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.photo {
+    flex: 0 0 500px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.photo img:hover {
+    transform: scale(1.05);
+}
+
+/* ==============================
    Rodapé
    ============================== */
 footer {
@@ -234,120 +313,54 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
-
-
-/* ==============================
-   Galeria de Fotos - Cores do Site
-   ============================== */
-.gallery-section {
-    padding: 4rem 2rem;
-    text-align: center;
-    background: linear-gradient(135deg, #B8E4C9 0%, #FFB7C5 100%);
-    color: #333;
 }
 
-.gallery-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #fff; /* título mais visível sobre o gradiente */
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+/* Aplica o mesmo estilo de .btn-primary aos botões do tipo submit */
+button[type="submit"].btn-primary,
+input[type="submit"].btn-primary {
+  background: #1E4EAA;
+  color: #fff;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: inline-block;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+button[type="submit"].btn-primary:hover,
+input[type="submit"].btn-primary:hover {
+  background: #163B80;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.photo {
-    overflow: hidden;
-    border-radius: 15px;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 3px solid #FFB7C5; /* borda rosa suave */
+nav a.active {
+  font-weight: bold;
+  opacity: 1;
 }
 
-.photo img {
+#tabelaVoluntarios table {
     width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s, filter 0.3s;
-    filter: brightness(0.95);
+    border-collapse: collapse;
+    table-layout: auto; /* ajusta a largura das colunas ao conteúdo */
 }
 
-.photo:hover img {
-    transform: scale(1.05);
-    filter: brightness(1);
-}
-
-.photo:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    border-color: #A0D6FF; /* muda para azul ao passar o mouse */
-}
-}
-
-/* ==============================
-   Galeria de Fotos
-   ============================== */
-.gallery-section {
-    padding: 4rem 2rem;
+#tabelaVoluntarios th,
+#tabelaVoluntarios td {
+    padding: 10px 30px;
     text-align: center;
-    background: linear-gradient(135deg, #B8E4C9 0%, #FFB7C5 100%);
-    color: #333;
+    border: 1px solid #FFC9A8;
 }
 
-.gallery-section h2 {   
-    font-size: 2.5rem;
-    margin-bottom: 2rem;    
+#tabelaVoluntarios th {
+    background-color: #FFB7C5;
+    color: #fff;
 }
 
-.gallery {
-    display: flex;
-    justify-content: center; /* centraliza horizontalmente */
-    flex-wrap: wrap; /* permite quebrar linha se necessário */
-    gap: 1.5rem; /* espaço entre fotos */
+#tabelaVoluntarios tr:nth-child(even) {
+    background-color: #FFF3B0;
 }
-
-.photo {
-    flex: 0 0 500px; /* largura fixa */
-    height: 400px; /* altura fixa */
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* mantém proporção e preenche a caixa */
-    transition: transform 0.3s ease;
-}
-
-.photo img:hover {
-    transform: scale(1.05); /* leve zoom ao passar o mouse */
-}
-
-.cta {
-    display: flex;
-    justify-content: center;  /* Centraliza horizontalmente */
-    align-items: center;      /* Centraliza verticalmente */
-    flex-direction: column;   /* Coloca os itens um abaixo do outro */
-    text-align: center;       /* Centraliza o texto */
-    min-height: 20vh;        /* Ocupa toda a altura da tela */
-    background: #FFF8F0;      /* Exemplo de cor de fundo */
-}
-
-.cta-content h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-.btn-primary {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;

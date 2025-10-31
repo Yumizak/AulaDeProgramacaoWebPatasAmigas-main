@@ -41,9 +41,9 @@
             <div class="photo"><img src="imagem/Imagem1.jpg" alt="Doação de ração"></div>
             <div class="photo"><img src="imagem/Imagem2.jpeg" alt="Voluntário no canil"></div>
             <div class="photo"><img src="imagem/Imagem3.jpeg" alt="Voluntário no canil"></div>
-            <div class="photo"><img src="imagem/Imagem5.jpeg" alt="Adoção de pets"></div>      
+            <div class="photo"><img src="imagem/Imagem5.jpeg" alt="Adoção de pets"></div>
             <div class="photo"><img src="imagem/Imagem6.jpeg" alt="Voluntário no canil"></div>
-            <div class="photo"><img src="imagem/Imagem8.jpg" alt="Adoção de pets"></div>       
+            <div class="photo"><img src="imagem/Imagem8.jpg" alt="Adoção de pets"></div>
         </div>
     </section>
 
@@ -59,7 +59,7 @@
             <div class="card">
                 <div class="card-icon">🏠</div>
                 <h3>Adoção</h3>
-                <p>Promovemos a adoção responsável e encontrando novos lares para os pets.</p>
+                <p>Promovemos a adoção responsável e encontramos novos lares para os pets.</p>
             </div>
             <div class="card">
                 <div class="card-icon">💊</div>
@@ -69,19 +69,37 @@
         </div>
     </section>
 
-    <!-- Call to Action -->
-<section class="cta">
-    <div class="cta-content">
-        <h2>Participe e Faça a Diferença</h2>
-        <p>Seja voluntário e transforme vidas junto conosco!</p>
-        <a href="cadastro.html" class="btn-primary">Cadastre-se</a>
-    </div>
-</section>
+    <!-- Call to Action (corrigido) -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Participe e Faça a Diferença</h2>
+            <p>Seja voluntário e transforme vidas junto conosco!</p>
+            <div class="cta-button">
+                <a href="cadastro.html" class="btn-primary">Cadastre-se</a>
+            </div>
+        </div>
+    </section>
+
+
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Patas Amigas. Todos os direitos reservados.</p>
         <p>Feito com &#128062; e &#10084;&#65039; para proteger e amar os animais</p>
     </footer>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const links = document.querySelectorAll("nav a");
+  const currentPage = window.location.pathname.split("/").pop();
+
+  links.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+});
+</script>
+
 </body>
 </html>
