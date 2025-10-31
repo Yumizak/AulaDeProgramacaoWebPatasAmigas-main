@@ -11,7 +11,8 @@ body {
     font-family: 'Baloo 2', cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #FFF8F0; /* fundo bem suave */
+    background-color: #FFF8F0;
+    /* fundo bem suave */
 }
 
 /* ==============================
@@ -25,7 +26,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 nav {
@@ -67,8 +68,8 @@ nav a.active {
    Hero Section - Página Inicial
    ============================== */
 .hero {
-    background: linear-gradient(rgba(255,243,176,0.85), rgba(255,201,168,0.85)),
-                url('imagens/pets-hero.jpg');
+    background: linear-gradient(rgba(255, 243, 176, 0.85), rgba(255, 201, 168, 0.85)),
+        url('imagens/pets-hero.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -129,11 +130,12 @@ nav a.active {
     padding: 1rem 2.5rem;
     font-size: 1.2rem;
     font-weight: bold;
-    border-radius: 50px; /* todos arredondados */
+    border-radius: 50px;
+    /* todos arredondados */
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     display: inline-block;
 }
@@ -147,7 +149,7 @@ nav a.active {
 .btn-primary:hover {
     background: #163B80;
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Botão secundário */
@@ -159,7 +161,7 @@ nav a.active {
 .btn-secondary:hover {
     background: #A03A5A;
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* ==============================
@@ -237,7 +239,8 @@ form legend {
 .cta-content p {
     font-size: 1.2rem;
     color: #555;
-    margin-bottom: 1.5rem; /* garante espaço entre texto e botão */
+    margin-bottom: 1.5rem;
+    /* garante espaço entre texto e botão */
 }
 
 .cta-button {
@@ -260,7 +263,7 @@ form legend {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     color: #fff;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .gallery {
@@ -275,7 +278,7 @@ form legend {
     height: 400px;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .photo img {
@@ -309,6 +312,7 @@ footer {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -318,35 +322,36 @@ footer {
 /* Aplica o mesmo estilo de .btn-primary aos botões do tipo submit */
 button[type="submit"].btn-primary,
 input[type="submit"].btn-primary {
-  background: #1E4EAA;
-  color: #fff;
-  padding: 1rem 2.5rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  display: inline-block;
+    background: #1E4EAA;
+    color: #fff;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: inline-block;
 }
 
 button[type="submit"].btn-primary:hover,
 input[type="submit"].btn-primary:hover {
-  background: #163B80;
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    background: #163B80;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 nav a.active {
-  font-weight: bold;
-  opacity: 1;
+    font-weight: bold;
+    opacity: 1;
 }
 
 #tabelaVoluntarios table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: auto; /* ajusta a largura das colunas ao conteúdo */
+    table-layout: auto;
+    /* ajusta a largura das colunas ao conteúdo */
 }
 
 #tabelaVoluntarios th,

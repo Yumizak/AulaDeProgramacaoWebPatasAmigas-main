@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,28 +17,37 @@
             border-radius: 8px;
             overflow: hidden;
         }
+
         .voluntarios-lista th {
-            background: #FFB7C5; /* rosa pastel */
+            background: #FFB7C5;
+            /* rosa pastel */
             color: #fff;
         }
+
         .voluntarios-lista td,
         .voluntarios-lista th {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: left;
         }
+
         .voluntarios-lista tr:nth-child(even) {
-            background-color: #FFF3B0; /* amarelo pastel */
+            background-color: #FFF3B0;
+            /* amarelo pastel */
         }
 
         /* ==============================
            Feedback de Erro
            ============================== */
-        input:invalid, select:invalid, textarea:invalid {
+        input:invalid,
+        select:invalid,
+        textarea:invalid {
             border-color: #FF6B6B;
         }
 
-        input:valid, select:valid, textarea:valid {
+        input:valid,
+        select:valid,
+        textarea:valid {
             border-color: #8AE1FC;
         }
 
@@ -89,7 +99,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .success-message {
@@ -102,22 +112,26 @@
 
         /* Responsividade da tabela */
         @media (max-width: 600px) {
-            .voluntarios-lista table, 
-            .voluntarios-lista th, 
+
+            .voluntarios-lista table,
+            .voluntarios-lista th,
             .voluntarios-lista td {
                 display: block;
                 width: 100%;
             }
+
             .voluntarios-lista th {
                 text-align: right;
                 padding-right: 50%;
                 position: relative;
             }
+
             .voluntarios-lista td {
                 text-align: right;
                 padding-left: 50%;
                 position: relative;
             }
+
             .voluntarios-lista td::before {
                 content: attr(data-label);
                 position: absolute;
@@ -128,26 +142,27 @@
         }
     </style>
 </head>
+
 <body>
-  <!-- Header -->
+    <!-- Header -->
     <header>
         <nav>
             <div class="logo">&#128062; Patas Amigas</div>
-           <ul id="navMenu">
-    <li><a href="index.html" >Início</a></li>
-    <li><a href="projeto.html">Projetos</a></li>
-    <li><a href="cadastro.html" class="active">Seja Voluntário</a></li>
-</ul>
+            <ul id="navMenu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="projeto.html">Projetos</a></li>
+                <li><a href="cadastro.html" class="active">Seja Voluntário</a></li>
+            </ul>
 
         </nav>
     </header>
 
-   <section class="hero hero-cadastro">
-    <div class="hero-content">
-        <h1>Cadastre-se como Voluntário</h1>
-        <p>Junte-se à Patas Amigas e ajude a transformar a vida de pets abandonados. 🐾</p>
-    </div>
-</section>
+    <section class="hero hero-cadastro">
+        <div class="hero-content">
+            <h1>Cadastre-se como Voluntário</h1>
+            <p>Junte-se à Patas Amigas e ajude a transformar a vida de pets abandonados. 🐾</p>
+        </div>
+    </section>
 
 
     <!-- Formulário de Cadastro -->
@@ -162,7 +177,8 @@
                     <legend>Dados Pessoais</legend>
                     <div class="form-group">
                         <label for="nome">Nome Completo *</label>
-                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required pattern="[A-Za-z\s]{3,50}" title="Somente letras e espaços, entre 3 e 50 caracteres"/>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required
+                            pattern="[A-Za-z\s]{3,50}" title="Somente letras e espaços, entre 3 e 50 caracteres" />
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail *</label>
@@ -170,11 +186,13 @@
                     </div>
                     <div class="form-group">
                         <label for="telefone">Telefone *</label>
-                        <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required pattern="\(\d{2}\) \d{5}-\d{4}" title="Formato: (11) 99999-9999"/>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required
+                            pattern="\(\d{2}\) \d{5}-\d{4}" title="Formato: (11) 99999-9999" />
                     </div>
                     <div class="form-group">
                         <label for="idade">Idade *</label>
-                        <input type="number" id="idade" name="idade" min="16" max="100" placeholder="Digite sua idade" required />
+                        <input type="number" id="idade" name="idade" min="16" max="100" placeholder="Digite sua idade"
+                            required />
                     </div>
                 </fieldset>
 
@@ -191,16 +209,16 @@
                         </select>
                     </div>
                     <div class="form-group">
-    <label for="area-interesse">🐾 Área de Interesse para Ajudar Nossos Bichinhos *</label>
-    <select id="area-interesse" name="area-interesse" required>
-        <option value="">Escolha onde quer colocar sua patinha...</option>
-        <option value="distribuicao-alimentos">🍖 Distribuição de Alimentos</option>
-        <option value="educacao">📚 Educação e Capacitação</option>
-        <option value="saude">💉 Apoio à Saúde dos Pets</option>
-        <option value="administrativo">📝 Apoio Administrativo</option>
-        <option value="qualquer">🐕 Qualquer área, só quero ajudar!</option>
-    </select>
-</div>
+                        <label for="area-interesse">🐾 Área de Interesse para Ajudar Nossos Bichinhos *</label>
+                        <select id="area-interesse" name="area-interesse" required>
+                            <option value="">Escolha onde quer colocar sua patinha...</option>
+                            <option value="distribuicao-alimentos">🍖 Distribuição de Alimentos</option>
+                            <option value="educacao">📚 Educação e Capacitação</option>
+                            <option value="saude">💉 Apoio à Saúde dos Pets</option>
+                            <option value="administrativo">📝 Apoio Administrativo</option>
+                            <option value="qualquer">🐕 Qualquer área, só quero ajudar!</option>
+                        </select>
+                    </div>
 
                 </fieldset>
 
@@ -208,15 +226,17 @@
                     <legend>Informações Adicionais</legend>
                     <div class="form-group">
                         <label for="experiencia">Você já participou de ações voluntárias antes?</label>
-                        <textarea id="experiencia" name="experiencia" placeholder="Conte-nos sobre sua experiência..." rows="3"></textarea>
+                        <textarea id="experiencia" name="experiencia" placeholder="Conte-nos sobre sua experiência..."
+                            rows="3"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="motivacao">Por que você quer ser voluntário?</label>
-                        <textarea id="motivacao" name="motivacao" placeholder="Compartilhe sua motivação..." rows="3"></textarea>
+                        <textarea id="motivacao" name="motivacao" placeholder="Compartilhe sua motivação..."
+                            rows="3"></textarea>
                     </div>
                 </fieldset>
 
-               <button type="submit" class="btn-primary">Enviar Cadastro</button>
+                <button type="submit" class="btn-primary">Enviar Cadastro</button>
             </form>
 
             <!-- Lista de Voluntários Cadastrados -->
@@ -231,7 +251,7 @@
 
 
 
-  <!-- Footer -->
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Patas Amigas. Todos os direitos reservados.</p>
         <p>Feito com &#128062; e &#10084;&#65039; para proteger e amar os animais</p>
@@ -239,4 +259,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

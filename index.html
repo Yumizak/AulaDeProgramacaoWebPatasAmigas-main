@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Patas Amigas - Transformando Vidas</title>
     <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -23,7 +25,8 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Transformando Vidas de Animais</h1>
-            <p>Somos uma ONG dedicada ao cuidado, resgate e adoção de pets abandonados. Junte-se a nós e ajude a dar uma nova chance para quem não tem voz!</p>
+            <p>Somos uma ONG dedicada ao cuidado, resgate e adoção de pets abandonados. Junte-se a nós e ajude a dar uma
+                nova chance para quem não tem voz!</p>
             <a href="cadastro.html" class="btn-primary">Quero Ajudar</a>
         </div>
     </section>
@@ -31,7 +34,9 @@
     <!-- Quem Somos -->
     <section class="about">
         <h2>Quem Somos</h2>
-        <p>A <strong>Patas Amigas</strong> é uma ONG sem fins lucrativos dedicada ao resgate, cuidado e adoção de animais abandonados. Trabalhamos para oferecer um lar seguro e amoroso, promovendo bem-estar, saúde e novas oportunidades para pets que precisam de uma segunda chance.</p>
+        <p>A <strong>Patas Amigas</strong> é uma ONG sem fins lucrativos dedicada ao resgate, cuidado e adoção de
+            animais abandonados. Trabalhamos para oferecer um lar seguro e amoroso, promovendo bem-estar, saúde e novas
+            oportunidades para pets que precisam de uma segunda chance.</p>
     </section>
 
     <!-- Galeria de Fotos -->
@@ -89,17 +94,18 @@
     </footer>
 
     <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const links = document.querySelectorAll("nav a");
-  const currentPage = window.location.pathname.split("/").pop();
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll("nav a");
+            const currentPage = window.location.pathname.split("/").pop();
 
-  links.forEach(link => {
-    if (link.getAttribute("href") === currentPage) {
-      link.classList.add("active");
-    }
-  });
-});
-</script>
+            links.forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
 
 </body>
+
 </html>

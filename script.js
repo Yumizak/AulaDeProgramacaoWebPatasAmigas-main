@@ -1,10 +1,10 @@
-// ==================== Menu Mobile ====================
+// ==================== Menu Mobile ===================
 function toggleMenu() {
     const menu = document.getElementById('navMenu');
     menu.classList.toggle('active');
 }
 
-// ==================== Scroll Suave ====================
+// ==================== Scroll Suave ===================
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (!section) return;
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==================== Máscara de Telefone ====================
 const telefoneInput = document.getElementById('telefone');
 if (telefoneInput) {
-    telefoneInput.addEventListener('input', function(e) {
+    telefoneInput.addEventListener('input', function (e) {
         let value = e.target.value.replace(/\D/g, '');
         if (value.length > 11) value = value.slice(0, 11);
 
